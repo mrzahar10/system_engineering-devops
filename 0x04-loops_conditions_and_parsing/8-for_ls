@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script lists files and shows only part after the first dash
+
+for file in *; do
+  if [[ -e "$file" ]]; then
+    if [[ "$file" == *-* ]]; then
+      echo "${file#*-}"
+    else
+      echo "$file"
+    fi
+  fi
+done
