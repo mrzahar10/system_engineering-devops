@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2009
 
-pgrep -a bash | awk '{print $1, $2}'
+pgrep -a bash | while read -r pid cmd_rest; do
+  if [[ $cmd_rest == "-bash"* ]]; then
+    cmd_rest="/bin/bash${cmd_rest#-bash}"
+  fi
+  echo "$pid $cmd_rest"
+done
