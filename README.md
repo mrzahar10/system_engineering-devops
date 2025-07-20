@@ -1,0 +1,2 @@
+# 0x05-processes_and_signals
+Project about Linux processes and signals.
