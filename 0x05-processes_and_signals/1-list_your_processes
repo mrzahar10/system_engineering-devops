@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # A Bash script that lists all running processes with hierarchy and user-oriented info
 
-ps axjf
+ps -eo ppid,time,cmd --forest
