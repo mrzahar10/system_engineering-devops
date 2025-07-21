@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
-# Script to stop all instances of 4-to_infinity_and_beyond
+# Script to stop the process 4-to_infinity_and_beyond
 
 PIDS=$(pgrep -f 4-to_infinity_and_beyond)
 
 if [ -n "$PIDS" ]; then
-  echo "Stopping processes: $PIDS"
-  kill $PIDS
-else
-  echo "Process not found!"
+  kill "$PIDS"
 fi
 
